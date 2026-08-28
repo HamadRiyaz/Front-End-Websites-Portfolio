@@ -1,0 +1,873 @@
+/* ===================================
+        RESET
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:
+    radial-gradient(circle at top left,#eef4ff,#ffffff 45%),
+    radial-gradient(circle at bottom right,#f6ebff,#ffffff 40%);
+
+    color:#1f2937;
+    overflow-x:hidden;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#6d72ff;
+    border-radius:30px;
+}
+
+::-webkit-scrollbar-track{
+    background:#edf2ff;
+}
+
+/* ===================================
+        SIDEBAR
+=================================== */
+
+.sidebar{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:250px;
+    height:100vh;
+
+    background:white;
+
+    border-right:1px solid #ececec;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    padding:25px 20px;
+
+    z-index:999;
+
+}
+
+/* Logo */
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    margin-bottom:35px;
+
+}
+
+.logo-icon{
+
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(135deg,#6670f8,#9d6cf8);
+
+    color:white;
+
+    font-size:20px;
+
+}
+
+.logo h2{
+
+    font-size:22px;
+
+}
+
+.logo p{
+
+    color:#777;
+    font-size:13px;
+
+}
+
+/* Menu */
+
+.menu-title{
+
+    color:#999;
+
+    font-size:12px;
+
+    margin-bottom:15px;
+
+    letter-spacing:1px;
+
+}
+
+nav{
+
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+
+}
+
+nav a{
+
+    text-decoration:none;
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    color:#374151;
+
+    padding:14px 18px;
+
+    border-radius:14px;
+
+    transition:.3s;
+
+    font-weight:500;
+
+}
+
+nav a:hover{
+
+    background:#edf2ff;
+
+}
+
+nav a.active{
+
+    background:linear-gradient(135deg,#6670f8,#9d6cf8);
+
+    color:white;
+
+}
+
+/* Upgrade */
+
+.upgrade-card{
+
+    background:#f3efff;
+
+    border-radius:20px;
+
+    padding:20px;
+
+}
+
+.upgrade-card h3{
+
+    margin-bottom:10px;
+
+}
+
+.upgrade-card p{
+
+    color:#666;
+
+    line-height:22px;
+
+    font-size:14px;
+
+}
+
+.upgrade-card button{
+
+    width:100%;
+
+    margin-top:18px;
+
+    border:none;
+
+    padding:12px;
+
+    border-radius:30px;
+
+    background:linear-gradient(135deg,#6670f8,#9d6cf8);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.upgrade-card button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ===================================
+        MAIN CONTENT
+=================================== */
+
+.main-content{
+
+    margin-left:250px;
+
+    padding:35px;
+
+    min-height:100vh;
+
+}
+
+/* ===================================
+        HEADER
+=================================== */
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+.topbar h1{
+
+    font-size:34px;
+
+    margin-bottom:8px;
+
+}
+
+.topbar p{
+
+    color:#777;
+
+}
+
+.top-actions{
+
+    display:flex;
+    gap:15px;
+
+}
+
+/* Buttons */
+
+.today-btn{
+
+    border:none;
+
+    padding:12px 22px;
+
+    border-radius:30px;
+
+    background:white;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+    cursor:pointer;
+
+    font-weight:600;
+
+}
+
+.add-btn{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    border:none;
+
+    padding:12px 24px;
+
+    border-radius:30px;
+
+    background:linear-gradient(135deg,#6670f8,#a36cf8);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.add-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ===================================
+        LAYOUT
+=================================== */
+
+.schedule-layout{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:25px;
+
+}
+
+.timeline-section{
+
+    display:flex;
+    flex-direction:column;
+
+}
+
+.summary-section{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+/* ===================================
+        CARDS
+=================================== */
+
+.card{
+
+    background:rgba(255,255,255,.82);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:24px;
+
+    padding:25px;
+
+    box-shadow:0 12px 30px rgba(110,120,170,.12);
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 20px 45px rgba(90,110,180,.18);
+
+}
+
+/* ===================================
+      SECTION TITLE
+=================================== */
+
+.section-title{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:25px;
+
+}
+
+.section-title h2{
+
+    font-size:22px;
+
+}
+
+.section-title span{
+
+    color:#6670f8;
+
+    font-weight:600;
+
+}
+/* ===================================
+        TIMELINE
+=================================== */
+
+.timeline{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.timeline-item{
+    display:grid;
+    grid-template-columns:90px 1fr;
+    gap:20px;
+    align-items:center;
+}
+
+.timeline-item .time{
+    font-size:15px;
+    font-weight:700;
+    color:#6b7280;
+    text-align:right;
+    padding-right:10px;
+}
+
+/* Current Activity */
+
+.timeline-item.current .time{
+    color:#6670f8;
+}
+
+.timeline-item.current .activity{
+    border:2px solid #6670f8;
+    box-shadow:0 15px 35px rgba(102,112,248,.20);
+}
+
+/* ===================================
+        ACTIVITY CARD
+=================================== */
+
+.activity{
+    border-radius:20px;
+    padding:20px 24px;
+    transition:.3s;
+    cursor:pointer;
+}
+
+.activity:hover{
+    transform:translateX(8px);
+}
+
+.activity h3{
+    font-size:19px;
+    margin-bottom:8px;
+}
+
+.activity p{
+    color:#666;
+    margin-bottom:10px;
+}
+
+.activity span{
+    display:inline-block;
+    padding:6px 14px;
+    border-radius:30px;
+    background:rgba(255,255,255,.65);
+    font-size:13px;
+    font-weight:600;
+}
+
+/* ===================================
+      Activity Colors
+=================================== */
+
+.blue{
+    background:#eaf2ff;
+}
+
+.purple{
+    background:#f3ebff;
+}
+
+.green{
+    background:#e8fff1;
+}
+
+.orange{
+    background:#fff4df;
+}
+
+.pink{
+    background:#ffeaf5;
+}
+
+.cyan{
+    background:#e8f9ff;
+}
+
+.yellow{
+    background:#fff9df;
+}
+
+.gray{
+    background:#f2f4f7;
+}
+
+/* ===================================
+        SUMMARY GRID
+=================================== */
+
+.summary-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.summary-card{
+    background:#f8fbff;
+    padding:22px;
+    border-radius:18px;
+    text-align:center;
+    transition:.3s;
+}
+
+.summary-card:hover{
+    transform:translateY(-5px);
+}
+
+.summary-card h1{
+    font-size:34px;
+    color:#6670f8;
+    margin-bottom:8px;
+}
+
+.summary-card p{
+    color:#666;
+}
+
+/* ===================================
+        DAILY GOALS
+=================================== */
+
+.goal-list{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.goal-list label{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:15px;
+    border-radius:16px;
+    background:#f8fbff;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.goal-list label:hover{
+    transform:translateX(5px);
+}
+
+.goal-list input{
+    width:18px;
+    height:18px;
+}
+
+/* ===================================
+        MOTIVATION
+=================================== */
+
+.quote{
+    margin-top:15px;
+    line-height:30px;
+    color:#555;
+    font-style:italic;
+    font-size:17px;
+}
+
+/* ===================================
+        FADE ANIMATION
+=================================== */
+
+.card{
+    animation:fadeUp .6s ease;
+}
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+/* ===================================
+        RESPONSIVE
+=================================== */
+
+@media(max-width:1200px){
+
+    .schedule-layout{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:900px){
+
+    .sidebar{
+        width:90px;
+        padding:20px 10px;
+    }
+
+    .sidebar h2,
+    .sidebar p,
+    .menu-title,
+    .upgrade-card{
+        display:none;
+    }
+
+    nav a{
+        justify-content:center;
+        font-size:0;
+    }
+
+    nav a i{
+        font-size:18px;
+    }
+
+    .main-content{
+        margin-left:90px;
+    }
+
+}
+
+@media(max-width:700px){
+
+    .topbar{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+    }
+
+    .top-actions{
+        width:100%;
+    }
+
+    .today-btn,
+    .add-btn{
+        flex:1;
+    }
+
+    .timeline-item{
+        grid-template-columns:1fr;
+    }
+
+    .timeline-item .time{
+        text-align:left;
+        padding:0;
+    }
+
+}
+
+@media(max-width:550px){
+
+    .sidebar{
+        display:none;
+    }
+
+    .main-content{
+        margin-left:0;
+        padding:20px;
+    }
+
+    .summary-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+/* ================= Add Activity ================= */
+
+.schedule-form{
+
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    margin-top:15px;
+
+}
+
+.schedule-form input{
+
+    padding:12px;
+    border:1px solid #d1d5db;
+    border-radius:10px;
+    font-size:15px;
+    outline:none;
+
+}
+
+.schedule-form input:focus{
+
+    border-color:#2563eb;
+
+}
+
+.schedule-form button{
+
+    padding:12px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:bold;
+
+}
+
+.schedule-form button:hover{
+
+    background:#1d4ed8;
+
+}
+
+/* ================= Activity Card ================= */
+
+#activityList{
+
+    margin-top:15px;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+
+}
+
+.activity-card{
+
+    background:#f8fafc;
+    border-left:5px solid #2563eb;
+    padding:15px;
+    border-radius:10px;
+
+}
+
+.activity-card h3{
+
+    margin-bottom:8px;
+
+}
+
+.activity-card p{
+
+    margin:4px 0;
+
+}
+
+.activity-card button{
+
+    margin-top:10px;
+    background:#ef4444;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:8px;
+    cursor:pointer;
+
+}
+.timeline-item{
+
+    display:flex;
+    align-items:flex-start;
+    gap:20px;
+    margin-bottom:20px;
+
+}
+
+.time{
+
+    width:80px;
+    font-weight:700;
+    color:#475569;
+    padding-top:15px;
+
+}
+
+.activity{
+
+    flex:1;
+    background:#ffffff;
+    border-left:5px solid #2563eb;
+    border-radius:12px;
+    padding:18px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.08);
+    transition:0.3s;
+
+}
+
+.activity:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.activity h3{
+
+    margin:0;
+    color:#1e293b;
+    font-size:18px;
+
+}
+
+.activity p{
+
+    margin:8px 0;
+    color:#64748b;
+
+}
+
+.activity span{
+
+    display:inline-block;
+    margin-top:8px;
+    background:#dbeafe;
+    color:#2563eb;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:600;
+
+}
+
+.activity button{
+
+    margin-top:15px;
+    padding:10px 16px;
+    border:none;
+    border-radius:8px;
+    background:#ef4444;
+    color:white;
+    cursor:pointer;
+    font-weight:600;
+    transition:0.3s;
+
+}
+
+.activity button:hover{
+
+    background:#dc2626;
+
+}

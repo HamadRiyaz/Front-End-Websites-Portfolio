@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="admin-dashboard_style.css">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div>
+
+            <div class="logo">
+
+                <div class="logo-icon">
+
+                    <i class="fa-solid fa-user-shield"></i>
+
+                </div>
+
+                <div>
+
+                    <h2>Admin Panel</h2>
+
+                    <p>Academic Growth System</p>
+
+                </div>
+
+            </div>
+
+            <span class="menu-title">MENU</span>
+
+            <nav>
+
+                <a class="active" href="#">
+
+                    <i class="fa-solid fa-gauge"></i>
+
+                    Dashboard
+
+                </a>
+
+                <a href="index.html">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Logout
+
+                </a>
+
+            </nav>
+
+        </div>
+
+        <div class="upgrade-card">
+
+            <h3>Welcome Admin 👋</h3>
+
+            <p>
+
+                Manage students and monitor the Smart Study Planner system.
+
+            </p>
+
+        </div>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Admin Dashboard</h1>
+
+                <p>
+
+                    Manage students and monitor all study activities.
+
+                </p>
+
+            </div>
+
+            <div class="header-image">
+
+                <i class="fa-solid fa-user-shield"></i>
+
+            </div>
+
+        </header>
+
+        <!-- Summary Cards -->
+
+        <section class="stats-grid">
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-users"></i>
+
+                <h2 id="totalStudents">0</h2>
+
+                <p>Total Students</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-calendar-days"></i>
+
+                <h2 id="totalPlans">0</h2>
+
+                <p>Total Study Plans</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-clock"></i>
+
+                <h2 id="totalActivities">0</h2>
+
+                <p>Total Activities</p>
+
+            </div>
+
+            <div class="stat-card">
+
+                <i class="fa-solid fa-list-check"></i>
+
+                <h2 id="totalTasks">0</h2>
+
+                <p>Total Tasks</p>
+
+            </div>
+
+        </section>
+                <!-- ================= Student Management ================= -->
+
+        <section class="content-grid">
+
+            <div class="card">
+
+                <div class="section-title">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <h2>Student Management</h2>
+
+                </div>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="studentTable">
+
+                        <!-- JavaScript will load students here -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <!-- ================= System Overview ================= -->
+
+            <div class="right-panel">
+
+                <div class="card">
+
+                    <div class="section-title">
+
+                        <i class="fa-solid fa-chart-pie"></i>
+
+                        <h2>System Overview</h2>
+
+                    </div>
+
+                    <div class="overview-item">
+
+                        <span>Total Subjects</span>
+
+                        <strong id="totalSubjects">
+
+                            0
+
+                        </strong>
+
+                    </div>
+
+                    <div class="overview-item">
+
+                        <span>Completed Tasks</span>
+
+                        <strong id="completedTasks">
+
+                            0
+
+                        </strong>
+
+                    </div>
+
+                    <div class="overview-item">
+
+                        <span>Pending Tasks</span>
+
+                        <strong id="pendingTasks">
+
+                            0
+
+                        </strong>
+
+                    </div>
+
+                    <div class="overview-item">
+
+                        <span>Average CGPA</span>
+
+                        <strong id="averageCGPA">
+
+                            0.00
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <!-- ================= Quick Actions ================= -->
+
+                <div class="card">
+
+                    <div class="section-title">
+
+                        <i class="fa-solid fa-bolt"></i>
+
+                        <h2>Quick Actions</h2>
+
+                    </div>
+
+                    <div class="action-buttons">
+
+                        <button id="refreshBtn">
+
+                            <i class="fa-solid fa-rotate"></i>
+
+                            Refresh Dashboard
+
+                        </button>
+
+                        <button id="clearStudents">
+
+                            <i class="fa-solid fa-user-xmark"></i>
+
+                            Clear Students
+
+                        </button>
+
+                        <button id="clearPlans">
+
+                            <i class="fa-solid fa-trash"></i>
+
+                            Clear Study Plans
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+                <!-- ================= Recent Students ================= -->
+
+        <section class="recent-section">
+
+            <div class="card">
+
+                <div class="section-title">
+
+                    <i class="fa-solid fa-user-clock"></i>
+
+                    <h2>Recently Registered Students</h2>
+
+                </div>
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Status</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="recentStudents">
+
+                        <!-- JavaScript will display recent students -->
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="admin-dashboard.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Smart Study Planner - Login</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+body{min-height:100vh;display:flex;justify-content:center;align-items:center;background:linear-gradient(135deg,#0f172a,#1e3a8a,#312e81);padding:20px}
+.container{width:1100px;max-width:100%;display:flex;background:rgba(255,255,255,.08);backdrop-filter:blur(15px);border-radius:20px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.left,.right{padding:50px}.left{width:55%;color:#fff;background:linear-gradient(135deg,#2563eb,#4338ca);display:flex;flex-direction:column;justify-content:center}
+.left h1{font-size:38px;margin-bottom:20px}.left h2{font-size:48px;margin-bottom:20px}.left p{line-height:1.8}
+.right{width:45%;display:flex;justify-content:center;align-items:center;background:#0f172acc}
+.card{width:100%;max-width:400px;background:rgba(255,255,255,.08);padding:35px;border-radius:18px}
+.card h2,.card p{text-align:center;color:#fff}.card p{color:#cbd5e1;margin:10px 0 25px}
+.input{position:relative;margin-bottom:18px}.input i{position:absolute;left:15px;top:16px;color:#60a5fa}
+.input input{width:100%;padding:14px 14px 14px 45px;border:none;outline:none;border-radius:10px;background:#1e293b;color:#fff}
+button{width:100%;padding:14px;border:none;border-radius:10px;background:linear-gradient(135deg,#2563eb,#4f46e5);color:#fff;font-weight:600;cursor:pointer}
+#message{text-align:center;color:#fca5a5;margin-top:15px}.link{text-align:center;color:#cbd5e1;margin-top:20px}.link a{color:#60a5fa;text-decoration:none}
+@media(max-width:850px){.container{flex-direction:column}.left,.right{width:100%}.left h2{font-size:36px}}
+</style></head><body>
+<div class="container">
+<div class="left">
+<h1><i class="fa-solid fa-graduation-cap"></i> Smart Study Planner</h1>
+<h2>Plan Smart.<br>Study Better.</h2>
+<p>Manage your planner, quizzes, assignments, daily schedule and academic performance from one place.</p>
+</div>
+<div class="right"><div class="card">
+<h2>Welcome Back</h2><p>Login to continue</p>
+<form id="loginForm">
+<div class="input"><i class="fa-solid fa-user"></i><input id="username" type="text" placeholder="Username or Email" required></div>
+<div class="input"><i class="fa-solid fa-lock"></i><input id="password" type="password" placeholder="Password" required></div>
+<button type="submit">Login</button>
+</form>
+<div id="message"></div>
+<div class="link">Don't have an account? <a href="register.html">Register</a></div>
+</div></div></div>
+<script>
+
+if(!localStorage.getItem("admin")){
+    localStorage.setItem("admin",JSON.stringify({
+        username:"admin",
+        password:"admin123"
+    }));
+}
+
+if(!localStorage.getItem("students")){
+    localStorage.setItem("students",JSON.stringify([]));
+}
+
+document.getElementById("loginForm").addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    let u=document.getElementById("username").value.trim();
+    let p=document.getElementById("password").value.trim();
+
+    let msg=document.getElementById("message");
+    msg.innerHTML="";
+
+    let admin=JSON.parse(localStorage.getItem("admin"));
+    let students=JSON.parse(localStorage.getItem("students"));
+
+    // Admin Login
+    if(u===admin.username && p===admin.password){
+
+        window.location.href="admin-dashboard.html";
+        return;
+
+    }
+
+    // Student Login
+    let foundUser=null;
+
+    for(let s of students){
+
+        if((s.email===u || s.name===u) && s.password===p){
+
+            foundUser=s;
+            break;
+
+        }
+
+    }
+
+    if(foundUser){
+
+        localStorage.setItem("currentUser",JSON.stringify(foundUser));
+
+        window.location.href="Dashboard.html";
+
+    }else{
+
+        msg.innerHTML="Invalid Username/Email or Password";
+
+    }
+
+});
+
+</script>
+</body></html>
