@@ -1,0 +1,847 @@
+/* ===================================
+        RESET
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:
+    radial-gradient(circle at top left,#edf4ff,#ffffff 45%),
+    radial-gradient(circle at bottom right,#f6ecff,#ffffff 40%);
+
+    color:#1f2937;
+    overflow-x:hidden;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#6670f8;
+    border-radius:30px;
+}
+
+::-webkit-scrollbar-track{
+    background:#edf2ff;
+}
+
+/* ===================================
+        SIDEBAR
+=================================== */
+
+.sidebar{
+
+    position:fixed;
+    left:0;
+    top:0;
+
+    width:250px;
+    height:100vh;
+
+    background:#fff;
+
+    border-right:1px solid #ececec;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    padding:25px 20px;
+
+    z-index:999;
+
+}
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    margin-bottom:35px;
+
+}
+
+.logo-icon{
+
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:linear-gradient(135deg,#6670f8,#9d6cf8);
+
+    color:#fff;
+
+    font-size:20px;
+
+}
+
+.logo h2{
+
+    font-size:22px;
+
+}
+
+.logo p{
+
+    color:#777;
+    font-size:13px;
+
+}
+
+.menu-title{
+
+    color:#999;
+    font-size:12px;
+
+    margin-bottom:15px;
+
+    letter-spacing:1px;
+
+}
+
+nav{
+
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+
+}
+
+nav a{
+
+    text-decoration:none;
+
+    color:#374151;
+
+    display:flex;
+    align-items:center;
+    gap:14px;
+
+    padding:14px 18px;
+
+    border-radius:14px;
+
+    transition:.3s;
+
+    font-weight:500;
+
+}
+
+nav a:hover{
+
+    background:#eef2ff;
+
+}
+
+nav a.active{
+
+    background:linear-gradient(135deg,#6670f8,#9d6cf8);
+
+    color:white;
+
+}
+
+/* Upgrade */
+
+.upgrade-card{
+
+    background:#f4f1ff;
+
+    padding:20px;
+
+    border-radius:20px;
+
+}
+
+.upgrade-card h3{
+
+    margin-bottom:10px;
+
+}
+
+.upgrade-card p{
+
+    color:#666;
+
+    line-height:22px;
+
+    font-size:14px;
+
+}
+
+.upgrade-card button{
+
+    width:100%;
+
+    margin-top:18px;
+
+    border:none;
+
+    border-radius:30px;
+
+    padding:12px;
+
+    background:linear-gradient(135deg,#6670f8,#9d6cf8);
+
+    color:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.upgrade-card button:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ===================================
+        MAIN
+=================================== */
+
+.main-content{
+
+    margin-left:250px;
+
+    padding:35px;
+
+    min-height:100vh;
+
+}
+
+/* ===================================
+        HEADER
+=================================== */
+
+.topbar{
+
+    margin-bottom:35px;
+
+}
+
+.topbar h1{
+
+    font-size:36px;
+
+    margin-bottom:8px;
+
+}
+
+.topbar p{
+
+    color:#777;
+
+}
+
+/* ===================================
+        GRID
+=================================== */
+
+.focus-grid{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:25px;
+
+}
+
+.timer-section{
+
+    display:flex;
+
+}
+
+.right-panel{
+
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+
+}
+
+/* ===================================
+        CARD
+=================================== */
+
+.card{
+
+    width:100%;
+
+    background:rgba(255,255,255,.82);
+
+    backdrop-filter:blur(20px);
+
+    border-radius:28px;
+
+    padding:30px;
+
+    box-shadow:0 12px 35px rgba(100,120,180,.12);
+
+    transition:.3s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+/* ===================================
+      MODE BUTTONS
+=================================== */
+
+.mode-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    margin-bottom:35px;
+
+}
+
+.mode{
+
+    border:none;
+
+    padding:12px 22px;
+
+    border-radius:30px;
+
+    background:#eef2ff;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.mode.active{
+
+    background:linear-gradient(135deg,#6670f8,#9d6cf8);
+
+    color:white;
+
+}
+
+.mode:hover{
+
+    transform:translateY(-3px);
+
+}
+
+/* ===================================
+        TIMER
+=================================== */
+
+.timer-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    margin:35px 0;
+
+}
+
+.timer-circle{
+
+    width:320px;
+    height:320px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#6670f8,#9d6cf8);
+
+    color:white;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    box-shadow:0 20px 45px rgba(102,112,248,.35);
+
+}
+
+.timer-circle h1{
+
+    font-size:72px;
+
+    font-weight:700;
+
+}
+
+.timer-circle p{
+
+    margin-top:10px;
+
+    font-size:18px;
+
+    opacity:.9;
+
+}
+
+/* ===================================
+        CONTROLS
+=================================== */
+
+.controls{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+
+}
+
+.controls button{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    border:none;
+
+    padding:14px 24px;
+
+    border-radius:30px;
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.start-btn{
+
+    background:#22c55e;
+
+    color:white;
+
+}
+
+.pause-btn{
+
+    background:#f59e0b;
+
+    color:white;
+
+}
+
+.reset-btn{
+
+    background:#ef4444;
+
+    color:white;
+
+}
+
+.controls button:hover{
+
+    transform:translateY(-3px);
+
+}
+/* ===================================
+        STATISTICS
+=================================== */
+
+.stats{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-top:25px;
+
+}
+
+.stat{
+
+    background:#f8fbff;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.stat:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 12px 25px rgba(102,112,248,.12);
+
+}
+
+.stat h3{
+
+    font-size:32px;
+
+    color:#6670f8;
+
+    margin-bottom:8px;
+
+}
+
+.stat p{
+
+    color:#666;
+
+    font-size:14px;
+
+}
+
+/* ===================================
+        MUSIC LIST
+=================================== */
+
+.music-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    margin-top:20px;
+
+}
+
+.music-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    background:#f8fbff;
+
+    padding:16px 18px;
+
+    border-radius:16px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.music-item:hover{
+
+    transform:translateX(6px);
+
+    background:#eef2ff;
+
+}
+
+.music-item i{
+
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#6670f8,#9d6cf8);
+
+    color:white;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+/* ===================================
+        SESSION HISTORY
+=================================== */
+
+.history{
+
+    margin-top:20px;
+
+    list-style:none;
+
+}
+
+.history li{
+
+    background:#f8fbff;
+
+    margin-bottom:12px;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    transition:.3s;
+
+}
+
+.history li:hover{
+
+    transform:translateX(6px);
+
+}
+
+/* ===================================
+        MOTIVATION
+=================================== */
+
+.quote{
+
+    margin-top:18px;
+
+    line-height:30px;
+
+    font-size:17px;
+
+    color:#555;
+
+    font-style:italic;
+
+}
+
+/* ===================================
+      TIMER ANIMATION
+=================================== */
+
+.timer-circle{
+
+    animation:pulse 2s infinite;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+        box-shadow:0 20px 45px rgba(102,112,248,.30);
+
+    }
+
+    50%{
+
+        transform:scale(1.03);
+
+        box-shadow:0 28px 60px rgba(102,112,248,.45);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        box-shadow:0 20px 45px rgba(102,112,248,.30);
+
+    }
+
+}
+
+/* ===================================
+        FADE ANIMATION
+=================================== */
+
+.card{
+
+    animation:fadeUp .6s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===================================
+        RESPONSIVE
+=================================== */
+
+@media(max-width:1200px){
+
+    .focus-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .sidebar{
+
+        width:90px;
+
+        padding:20px 10px;
+
+    }
+
+    .sidebar h2,
+    .sidebar p,
+    .menu-title,
+    .upgrade-card{
+
+        display:none;
+
+    }
+
+    nav a{
+
+        justify-content:center;
+
+        font-size:0;
+
+    }
+
+    nav a i{
+
+        font-size:18px;
+
+    }
+
+    .main-content{
+
+        margin-left:90px;
+
+    }
+
+}
+
+@media(max-width:700px){
+
+    .stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .timer-circle{
+
+        width:260px;
+        height:260px;
+
+    }
+
+    .timer-circle h1{
+
+        font-size:56px;
+
+    }
+
+    .mode-buttons{
+
+        flex-wrap:wrap;
+
+    }
+
+    .controls{
+
+        flex-direction:column;
+
+    }
+
+    .controls button{
+
+        width:100%;
+        justify-content:center;
+
+    }
+
+}
+
+@media(max-width:550px){
+
+    .sidebar{
+
+        display:none;
+
+    }
+
+    .main-content{
+
+        margin-left:0;
+
+        padding:20px;
+
+    }
+
+    .timer-circle{
+
+        width:220px;
+        height:220px;
+
+    }
+
+    .timer-circle h1{
+
+        font-size:46px;
+
+    }
+
+    .timer-circle p{
+
+        font-size:15px;
+
+    }
+
+}

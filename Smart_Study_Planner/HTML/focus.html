@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Focus Mode | Smart Study</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="focus_style.css">
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div>
+
+            <div class="logo">
+
+                <div class="logo-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div>
+<h3>Academic Growth</h3>
+<p>System</p>
+</div>
+
+
+            </div>
+
+            <span class="menu-title">MENU</span>
+
+            <nav>
+
+                <a href="Dashboard.html">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+
+                <a href="planner.html">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    Planner
+                </a>
+
+                <a href="schedule.html">
+                    <i class="fa-solid fa-clock"></i>
+                    Daily Schedule
+                </a>
+
+                <a href="pending.html">
+                    <i class="fa-solid fa-list-check"></i>
+                    Pending Tasks
+                </a>
+
+                <a class="active" href="#">
+                    <i class="fa-solid fa-brain"></i>
+                    Focus Mode
+                </a>
+
+                
+
+                <a href="performance.html">
+                    <i class="fa-solid fa-chart-column"></i>
+                    Performance
+                </a>
+
+            </nav>
+
+        </div>
+
+        <div class="upgrade-card">
+
+            <h3>Stay Focused</h3>
+
+            <p>
+                Boost your productivity using the Pomodoro Technique.
+            </p>
+
+            <button>Upgrade</button>
+
+        </div>
+
+    </aside>
+
+    <!-- Main Content -->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Focus Mode</h1>
+
+                <p>Eliminate distractions and stay productive.</p>
+
+            </div>
+
+        </header>
+
+        <section class="focus-grid">
+
+            <!-- Timer Section -->
+
+            <div class="timer-section">
+
+                <div class="card">
+
+                    <div class="mode-buttons">
+
+                        <button class="mode active" data-time="25">
+                            Focus
+                        </button>
+
+                        <button class="mode" data-time="5">
+                            Short Break
+                        </button>
+
+                        <button class="mode" data-time="15">
+                            Long Break
+                        </button>
+
+                    </div>
+
+                    <div class="timer-container">
+
+                        <div class="timer-circle">
+
+                            <h1 id="timer">
+                                25:00
+                            </h1>
+
+                            <p id="modeName">
+                                Focus Session
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="controls">
+
+                        <button id="startBtn" class="start-btn">
+
+                            <i class="fa-solid fa-play"></i>
+
+                            Start
+
+                        </button>
+
+                        <button id="pauseBtn" class="pause-btn">
+
+                            <i class="fa-solid fa-pause"></i>
+
+                            Pause
+
+                        </button>
+
+                        <button id="resetBtn" class="reset-btn">
+
+                            <i class="fa-solid fa-rotate-left"></i>
+
+                            Reset
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Right Panel -->
+
+            <div class="right-panel">
+
+                <!-- Statistics -->
+
+                <div class="card">
+
+                    <h2>Today's Statistics</h2>
+
+                    <div class="stats">
+
+                        <div class="stat">
+
+                            <h3 id="sessions">
+                                0
+                            </h3>
+
+                            <p>Sessions</p>
+
+                        </div>
+
+                        <div class="stat">
+
+                            <h3 id="focusHours">
+                                0h
+                            </h3>
+
+                            <p>Focused</p>
+
+                        </div>
+
+                        <div class="stat">
+
+                            <h3>
+                                95%
+                            </h3>
+
+                            <p>Goal</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Music -->
+
+                <div class="card">
+
+                    <h2>Focus Music</h2>
+
+                    <div class="music-list">
+
+                        <div class="music-item">
+
+                            <i class="fa-solid fa-headphones"></i>
+
+                            Rain Sounds
+
+                        </div>
+
+                        <div class="music-item">
+
+                            <i class="fa-solid fa-music"></i>
+
+                            Piano
+
+                        </div>
+
+                        <div class="music-item">
+
+                            <i class="fa-solid fa-water"></i>
+
+                            Ocean Waves
+
+                        </div>
+
+                        <div class="music-item">
+
+                            <i class="fa-solid fa-leaf"></i>
+
+                            Forest
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Session History -->
+
+                <div class="card">
+
+    <h2>Recent Sessions</h2>
+
+    <ul class="history" id="history">
+
+    </ul>
+
+</div>
+
+                <!-- Quote -->
+
+                <div class="card">
+
+                    <h2>Daily Motivation</h2>
+
+                    <p class="quote">
+
+                        "Small progress every day leads to big results."
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="focus.js"></script>
+
+</body>
+
+</html>

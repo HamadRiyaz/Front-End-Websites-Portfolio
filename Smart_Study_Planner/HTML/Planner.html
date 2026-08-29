@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Planner | Smart Study Planner</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="planner_style.css">
+
+</head>
+
+<body>
+
+    <!-- ================= Sidebar ================= -->
+
+    <aside class="sidebar">
+
+        <div>
+
+            <div class="logo">
+
+                <div class="logo-icon">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                </div>
+
+                <div>
+<h3>Academic Growth</h3>
+<p>System</p>
+</div>
+
+
+            </div>
+
+            <span class="menu-title">
+
+                MENU
+
+            </span>
+
+            <nav>
+
+                <a href="Dashboard.html">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Dashboard
+
+                </a>
+
+                <a href="planner.html"
+                   class="active">
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                    Planner
+
+                </a>
+
+                <a href="schedule.html">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                    Schedule
+
+                </a>
+
+                <a href="pending.html">
+
+                    <i class="fa-solid fa-list-check"></i>
+
+                    Pending Tasks
+
+                </a>
+
+                <a href="focus.html">
+
+                    <i class="fa-solid fa-brain"></i>
+
+                    Focus Mode
+
+                </a>
+
+                
+
+                <a href="performance.html">
+
+                    <i class="fa-solid fa-chart-column"></i>
+
+                    Performance
+
+                </a>
+
+            </nav>
+
+        </div>
+
+        <div class="upgrade-card">
+
+            <h3>
+
+                Premium
+
+            </h3>
+
+            <p>
+
+                Unlock AI Planning and Smart Reminders.
+
+            </p>
+
+            <button>
+
+                Upgrade
+
+            </button>
+
+        </div>
+
+    </aside>
+
+    <!-- ================= Main Content ================= -->
+
+    <main class="main-content">
+            <!-- ================= Header ================= -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>
+
+                    Study Planner
+
+                </h1>
+
+                <p>
+
+                    Organize your study schedule efficiently.
+
+                </p>
+
+            </div>
+
+            <div class="top-right">
+
+                <button class="today-btn">
+
+                    Today
+
+                </button>
+
+              <button class="add-btn" id="addTaskBtn">
+
+    <i class="fa-solid fa-plus"></i>
+
+    Add Task
+
+</button>
+            </div>
+
+        </header>
+
+        <!-- ================= Planner Grid ================= -->
+
+        <section class="planner-grid">
+
+            <!-- ================= Left Panel ================= -->
+
+            <div class="left-panel">
+
+                <!-- Calendar -->
+
+                <div class="card">
+
+                    <div class="calendar-header">
+
+                        <button id="prevMonth">
+
+                            <i class="fa-solid fa-angle-left"></i>
+
+                        </button>
+
+                        <h2 id="monthYear">
+
+                        </h2>
+
+                        <button id="nextMonth">
+
+                            <i class="fa-solid fa-angle-right"></i>
+
+                        </button>
+
+                    </div>
+
+                    <div class="weekdays">
+
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+
+                    </div>
+
+                    <div
+                        id="calendar"
+                        class="calendar-grid">
+
+                    </div>
+
+                </div>
+                                <!-- ================= Add Study Plan ================= -->
+
+                <div class="card">
+
+                    <div class="section-title">
+
+                        <h2>
+
+                            Add Study Plan
+
+                        </h2>
+
+                    </div>
+
+                    <div class="planner-form">
+
+                        <input
+                            type="text"
+                            id="subject"
+                            placeholder="Enter Subject">
+
+                        <input
+                            type="date"
+                            id="date">
+
+                        <input
+                            type="time"
+                            id="time">
+
+                        <select id="priority">
+
+                            <option value="High">
+
+                                High Priority
+
+                            </option>
+
+                            <option value="Medium">
+
+                                Medium Priority
+
+                            </option>
+
+                            <option value="Low">
+
+                                Low Priority
+
+                            </option>
+
+                        </select>
+
+                        <button id="savePlan">
+
+                            Save Plan
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- ================= Study Plans ================= -->
+
+                <div class="card">
+
+                    <div class="section-title">
+
+                        <h2>
+
+                            Study Plans
+
+                        </h2>
+
+                    </div>
+
+                    <div id="planList">
+
+                    </div>
+
+                </div>
+
+                <!-- ================= Today's Schedule ================= -->
+
+                <div class="card">
+
+                    <div class="section-title">
+
+                        <h2>
+
+                            Today's Schedule
+
+                        </h2>
+
+                    </div>
+
+                    <div class="schedule-list">
+
+                    </div>
+
+                </div>
+                                <!-- ================= Priority Tasks ================= -->
+
+                <div class="card">
+
+                    <div class="section-title">
+
+                        <h2>
+
+                            Priority Tasks
+
+                        </h2>
+
+                    </div>
+
+                    <div class="task-list">
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            Finish OOP Project
+
+                        </label>
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            Prepare Quiz
+
+                        </label>
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            Complete Lab Report
+
+                        </label>
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            Revise Chapter 5
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- ================= Upcoming Events ================= -->
+
+                <div class="card">
+
+                    <div class="section-title">
+
+                        <h2>
+
+                            Upcoming Events
+
+                        </h2>
+
+                    </div>
+
+                    <div class="event-list">
+
+                        <div class="event">
+
+                            <h4>
+
+                                Quiz - Information Security
+
+                            </h4>
+
+                            <span>
+
+                                Tomorrow
+
+                            </span>
+
+                        </div>
+
+                        <div class="event">
+
+                            <h4>
+
+                                Assignment Submission
+
+                            </h4>
+
+                            <span>
+
+                                Friday
+
+                            </span>
+
+                        </div>
+
+                        <div class="event">
+
+                            <h4>
+
+                                Semester Presentation
+
+                            </h4>
+
+                            <span>
+
+                                Next Week
+
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="planner.js"></script>
+
+</body>
+
+</html>

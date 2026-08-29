@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Smart Study Dashboard</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link rel="stylesheet" href="Dashboard_style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<div class="logo-icon">
+<i class="fa-solid fa-graduation-cap"></i>
+</div>
+
+<div>
+<h3>Academic Growth</h3>
+<p>System</p>
+</div>
+
+</div>
+
+<span class="menu-title">MENU</span>
+
+<nav>
+
+<a class="active" href="student-dashboard.html">
+<i class="fa-solid fa-house"></i>
+Dashboard
+</a>
+
+<a href="planner.html">
+<i class="fa-solid fa-calendar-days"></i>
+Planner
+</a>
+
+<a href="schedule.html">
+<i class="fa-solid fa-clock"></i>
+Schedule
+</a>
+
+<a href="pending.html">
+<i class="fa-solid fa-list-check"></i>
+Pending Tasks
+</a>
+
+<a href="focus.html">
+<i class="fa-solid fa-brain"></i>
+Focus Mode
+</a>
+
+
+<a href="performance.html">
+<i class="fa-solid fa-chart-column"></i>
+Performance
+</a>
+
+</nav>
+
+<div class="upgrade-card">
+
+<h4>Upgrade to Pro</h4>
+
+<p>Unlock AI study insights and unlimited focus sessions.</p>
+
+<button>Upgrade</button>
+
+</div>
+
+</aside>
+
+<main class="main-content">
+
+<header class="topbar">
+
+<div>
+
+<h2 id="welcome"></h2>
+
+<p>Here's what your week looks like.</p>
+
+</div>
+
+<div class="top-right">
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input type="text" placeholder="Search subjects, tasks...">
+
+</div>
+
+<button class="icon-btn">
+<i class="fa-solid fa-gear"></i>
+</button>
+
+<button class="icon-btn">
+<i class="fa-regular fa-bell"></i>
+</button>
+
+<div class="profile">
+
+<div class="avatar" id="avatar">
+S
+</div>
+
+<div>
+
+<h4 id="studentName"></h4>
+
+<span>Student</span>
+
+</div>
+
+</div>
+
+<button class="icon-btn" onclick="logout()">
+<i class="fa-solid fa-right-from-bracket"></i>
+</button>
+
+</div>
+
+</header>
+
+<section class="stats-grid">
+
+<div class="card stat-card blue">
+
+<i class="fa-solid fa-circle-check"></i>
+
+<h2 id="todayTask">0</h2>
+
+<p>Today's Tasks</p>
+
+<small id="todayCompleted">0 Completed</small>
+
+</div>
+
+<div class="card stat-card yellow">
+
+<i class="fa-solid fa-hourglass-half"></i>
+
+<h2 id="pendingTask">0</h2>
+
+<p>Pending Tasks</p>
+
+<small id="highPriority">0 High Priority</small>
+
+</div>
+
+<div class="card stat-card purple">
+
+<i class="fa-solid fa-book-open"></i>
+
+<h2 id="quizCount">0</h2>
+
+<p>Upcoming Quizzes</p>
+
+<small>Stored in LocalStorage</small>
+
+</div>
+
+<div class="card stat-card cyan">
+
+<i class="fa-solid fa-file-lines"></i>
+
+<h2 id="assignmentCount">0</h2>
+
+<p>Assignments</p>
+
+<small>Stored in LocalStorage</small>
+
+</div>
+
+</section>
+
+<section class="dashboard-grid">
+
+<div class="left-column">
+
+<div class="card chart-card">
+
+<div class="card-header">
+
+<div>
+
+<h3>Study Hours This Week</h3>
+
+<p>LocalStorage Report</p>
+
+</div>
+
+</div>
+
+<canvas id="studyChart"></canvas>
+
+</div>
+<div class="card">
+
+<div class="card-header">
+
+<h3>Today's Tasks</h3>
+
+<a href="pending.html">View All</a>
+
+</div>
+
+<div class="task-list" id="taskList">
+
+<!-- Tasks LocalStorage se yahan load hongi -->
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Right Column -->
+
+<div class="right-column">
+
+<div class="card streak-card">
+
+<h4>🔥 Study Streak</h4>
+
+<h1 id="streak">0</h1>
+
+<p>Days in a row</p>
+
+<div class="progress-line">
+
+<div class="progress-fill"></div>
+
+</div>
+
+</div>
+
+<div class="card progress-card">
+
+<h3>Weekly Progress</h3>
+
+<canvas id="progressChart"></canvas>
+
+<div class="progress-footer">
+
+<div>
+
+<h2 id="doneTask">0</h2>
+
+<span>Done</span>
+
+</div>
+
+<div>
+
+<h2 id="leftTask">0</h2>
+
+<span>Left</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="card upcoming">
+
+<div class="card-header">
+
+<h3>Upcoming Deadlines</h3>
+
+<a href="planner.html">See Planner</a>
+
+</div>
+
+<div class="deadline-grid" id="deadlineGrid">
+
+<!-- Planner Deadlines yahan show hongi -->
+
+</div>
+
+</section>
+
+</main>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>

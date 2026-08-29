@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Daily Schedule | Smart Study</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="schedule_style.css">
+
+</head>
+
+<body>
+
+    <!-- ================= Sidebar ================= -->
+
+    <aside class="sidebar">
+
+        <div>
+
+            <div class="logo">
+
+                <div class="logo-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <div>
+<h3>Academic Growth</h3>
+<p>System</p>
+</div>
+
+
+            </div>
+
+            <span class="menu-title">MENU</span>
+
+            <nav>
+
+                <a href="Dashboard.html">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </a>
+
+                <a href="planner.html">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    Planner
+                </a>
+
+                <a class="active" href="#">
+                    <i class="fa-solid fa-clock"></i>
+                    Daily Schedule
+                </a>
+
+                <a href="pending.html">
+                    <i class="fa-solid fa-list-check"></i>
+                    Pending Tasks
+                </a>
+
+                <a href="focus.html">
+                    <i class="fa-solid fa-brain"></i>
+                    Focus Mode
+                </a>
+
+
+                <a href="performance.html">
+                    <i class="fa-solid fa-chart-column"></i>
+                    Performance
+                </a>
+
+            </nav>
+
+        </div>
+
+        <div class="upgrade-card">
+
+            <h3>Stay Focused</h3>
+
+            <p>
+                Complete your schedule to improve productivity.
+            </p>
+
+            <button>Upgrade</button>
+
+        </div>
+
+    </aside>
+
+    <!-- ================= Main Content ================= -->
+
+    <main class="main-content">
+
+        <!-- Header -->
+
+        <header class="topbar">
+
+            <div>
+
+                <h1>Daily Schedule</h1>
+
+                <p>Wednesday, July 15 • Stay productive today.</p>
+
+            </div>
+
+            <div class="top-actions">
+
+                <button class="today-btn">
+
+                    <i class="fa-solid fa-calendar-day"></i>
+
+                    Today
+
+                </button>
+
+                <button class="add-btn" id="addActivityBtn">
+
+    <i class="fa-solid fa-plus"></i>
+
+    Add Activity
+
+</button>
+
+            </div>
+
+        </header>
+
+        <!-- Main Grid -->
+
+        <section class="schedule-layout">
+
+            <!-- Timeline -->
+
+            <div class="timeline-section">
+
+                <div class="card">
+
+                    <div class="section-title">
+
+                        <h2>Today's Timeline</h2>
+
+                        <span>8 Activities</span>
+
+                    </div>
+
+                   
+
+                    <div class="timeline" id="timeline">
+
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- ================= Add Activity ================= -->
+
+<div class="card">
+
+    <div class="section-title">
+
+        <h2>Add Activity</h2>
+
+    </div>
+
+    <div class="schedule-form">
+
+        <input
+            type="text"
+            id="activityName"
+            placeholder="Activity Name">
+
+        <input
+            type="text"
+            id="activityPlace"
+            placeholder="Location">
+
+        <input
+            type="time"
+            id="startTime">
+
+        <input
+            type="time"
+            id="endTime">
+
+        <button id="saveActivity">
+
+            Save Activity
+
+        </button>
+
+    </div>
+
+</div>
+
+<!-- ================= Activity List ================= -->
+
+<div class="card">
+
+    <div class="section-title">
+
+        <h2>My Activities</h2>
+
+    </div>
+
+    <div id="activityList">
+
+    </div>
+
+</div>
+            <!-- Right Panel -->
+
+            <div class="summary-section">
+
+                <!-- Summary -->
+
+                <div class="card">
+
+                    <div class="section-title">
+
+                        <h2>Today's Summary</h2>
+
+                    </div>
+
+                    <div class="summary-grid">
+
+                        <div class="summary-card">
+
+                            <h1>7.5h</h1>
+
+                            <p>Study Time</p>
+
+                        </div>
+
+                        <div class="summary-card">
+
+                            <h1>2</h1>
+
+                            <p>Breaks</p>
+
+                        </div>
+
+                        <div class="summary-card">
+
+                            <h1>6</h1>
+
+                            <p>Completed</p>
+
+                        </div>
+
+                        <div class="summary-card">
+
+                            <h1>94%</h1>
+
+                            <p>Productivity</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Goals -->
+
+                <div class="card">
+
+                    <div class="section-title">
+
+                        <h2>Daily Goals</h2>
+
+                    </div>
+
+                    <div class="goal-list">
+
+                        <label>
+
+                            <input type="checkbox" checked>
+
+                            5 Time Prayer
+
+                        </label>
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            Meditation
+
+                        </label>
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            Check deadlines
+
+                        </label>
+
+                        <label>
+
+                            <input type="checkbox">
+
+                            Read 20 Pages
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- Quote -->
+
+                <div class="card">
+
+                    <h2>Motivation</h2>
+
+                    <p class="quote">
+
+                        "Success is the sum of small efforts repeated day in and day out."
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="schedule.js"></script>
+
+</body>
+
+</html>
