@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Projects — Hamad Riyaz | Python, Data & Web Builds</title>
+
+  <meta
+    name="description"
+    content="Web scraping, data analysis, machine learning, Java and web development projects built by Hamad Riyaz."
+  />
+
+  <meta name="author" content="Hamad Riyaz" />
+
+  <meta
+    property="og:title"
+    content="Projects — Hamad Riyaz | Python, Data & Web Builds"
+  />
+
+  <meta
+    property="og:description"
+    content="Web scraping, data analysis, machine learning, Java and web development projects built by Hamad Riyaz."
+  />
+
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* Project Images */
+    .project__thumb {
+      height: 102px;
+      overflow: hidden;
+      background: var(--surface);
+    }
+
+    .project__thumb img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .project:hover .project__thumb img {
+      transform: scale(1.04);
+    }
+  </style>
+</head>
+
+<body>
+
+  <a
+    class="skip-link"
+    href="#main"
+    style="position:absolute;left:-9999px"
+  >
+    Skip to content
+  </a>
+
+  <!-- ================= HEADER ================= -->
+
+  <header class="site-header">
+
+    <div class="container header-inner">
+
+      <a
+        class="logo"
+        href="index.html"
+        aria-label="Hamad Riyaz — home"
+      >
+        HR
+      </a>
+
+      <nav
+        class="nav"
+        id="primary-nav"
+        aria-label="Main navigation"
+      >
+
+        <a href="index.html">Home</a>
+
+        <a href="about.html">About</a>
+
+        <a href="skills.html">Skills</a>
+
+        <a
+          href="projects.html"
+          aria-current="page"
+        >
+          Projects
+        </a>
+
+        <a href="experience.html">Experience</a>
+
+        <a href="contact.html">Contact</a>
+
+        <a
+          class="btn btn--primary btn--sm nav-cta"
+          href="assets/hamad-riyaz-cv.pdf"
+          download
+        >
+          Download CV
+        </a>
+
+      </nav>
+
+      <div class="header-actions">
+
+        <a
+          class="btn btn--primary btn--sm"
+          href="assets/hamad-riyaz-cv.pdf"
+          download
+        >
+          Download CV
+
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path d="M12 3v12m0 0 5-5m-5 5-5-5M4 20h16" />
+          </svg>
+
+        </a>
+
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+          aria-controls="primary-nav"
+        >
+          <span></span>
+        </button>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main id="main">
+
+    <!-- HERO -->
+
+    <section class="page-hero">
+
+      <div class="container">
+
+        <p class="eyebrow">
+          Featured projects
+        </p>
+
+        <h1>
+          Some things I&rsquo;ve built
+        </h1>
+
+        <p class="lead">
+          Real projects from my learning and freelance work.
+          Use the filters to narrow by technology, and open any
+          card for the full breakdown.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= PROJECTS ================= -->
+
+    <section class="section section--tight">
+
+      <div class="container">
+
+        <!-- FILTERS -->
+
+        <div
+          class="filters"
+          role="group"
+          aria-label="Filter projects"
+        >
+
+          <button
+            class="filter is-active"
+            type="button"
+            data-filter="all"
+            aria-pressed="true"
+          >
+            All
+          </button>
+
+          <button
+            class="filter"
+            type="button"
+            data-filter="web"
+            aria-pressed="false"
+          >
+            Web Development
+          </button>
+
+          <button
+            class="filter"
+            type="button"
+            data-filter="python"
+            aria-pressed="false"
+          >
+            Python
+          </button>
+
+          <button
+            class="filter"
+            type="button"
+            data-filter="data"
+            aria-pressed="false"
+          >
+            Data / ML
+          </button>
+
+          <button
+            class="filter"
+            type="button"
+            data-filter="java"
+            aria-pressed="false"
+          >
+            Java
+          </button>
+
+          <button
+            class="filter"
+            type="button"
+            data-filter="dsa"
+            aria-pressed="false"
+          >
+            DSA
+          </button>
+
+        </div>
+
+
+        <!-- PROJECT GRID -->
+
+        <div
+          class="grid grid--3"
+          id="project-grid"
+        >
+
+
+          <!-- ================= PROJECT 1 ================= -->
+
+          <article class="card card--hover project reveal" data-category="python">
+            <div class="project__thumb">
+              <img src="images/web_scrapper.png" alt="Web Scraping Projects" />
+            </div>
+
+            <div class="project__body">
+              <h3>Web Scraping Projects</h3>
+              <p>A collection of Python web scraping projects for extracting and organising structured data from websites.</p>
+
+              <ul class="tags">
+                <li class="tag">Python</li>
+                <li class="tag">Requests</li>
+                <li class="tag">BeautifulSoup</li>
+                <li class="tag">Pandas</li>
+              </ul>
+
+              <div class="project__actions">
+                <button class="btn btn--sm" type="button" data-open-details>Details</button>
+                <a class="btn btn--sm" href="https://github.com/HamadRiyaz/Web-Scraping-Projects.git" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+            </div>
+
+            <template>
+              <h2 style="margin-bottom:6px">Web Scraping Projects</h2>
+              <ul class="tags">
+                <li class="tag">Python</li>
+                <li class="tag">Requests</li>
+                <li class="tag">BeautifulSoup</li>
+                <li class="tag">Pandas</li>
+              </ul>
+
+              <h3>Overview</h3>
+              <p>A collection of Python scraping work focused on retrieving useful information from websites and converting it into structured data.</p>
+
+              <h3>Current work</h3>
+              <p>The collection includes a Quotes to Scrape project that extracts quotes and authors using Requests and BeautifulSoup, then stores the results in a Pandas DataFrame and CSV file.</p>
+
+              <h3>Key features</h3>
+              <ul>
+                <li>HTTP requests with Python</li>
+                <li>HTML parsing with BeautifulSoup</li>
+                <li>Structured data extraction</li>
+                <li>Pandas DataFrame and CSV export</li>
+              </ul>
+            </template>
+          </article>
+
+
+          <!-- ================= PROJECT 2 ================= -->
+
+          <article class="card card--hover project reveal" data-category="data python">
+            <div class="project__thumb">
+              <img src="images/Data_analysis.png" alt="Data Analysis and EDA" />
+            </div>
+
+            <div class="project__body">
+              <h3>Data Analysis &amp; EDA</h3>
+              <p>Exploratory data analysis using Python to clean, understand and visualise datasets and discover useful patterns.</p>
+
+              <ul class="tags">
+                <li class="tag">Python</li>
+                <li class="tag">Pandas</li>
+                <li class="tag">Matplotlib</li>
+                <li class="tag">Seaborn</li>
+              </ul>
+
+              <div class="project__actions">
+                <button class="btn btn--sm" type="button" data-open-details>Details</button>
+                <a class="btn btn--sm" href="https://github.com/HamadRiyaz/Data-Analysis-EDA.git" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+            </div>
+
+            <template>
+              <h2 style="margin-bottom:6px">Data Analysis &amp; EDA</h2>
+              <ul class="tags">
+                <li class="tag">Python</li>
+                <li class="tag">Pandas</li>
+                <li class="tag">Matplotlib</li>
+                <li class="tag">Seaborn</li>
+              </ul>
+
+              <h3>Overview</h3>
+              <p>An exploratory data analysis workflow covering data inspection, cleaning, descriptive statistics and visualisation.</p>
+
+              <h3>Approach</h3>
+              <p>The analysis starts by understanding the dataset, checking data quality and summarising important variables before using visualisations to identify patterns and relationships.</p>
+
+              <h3>Key features</h3>
+              <ul>
+                <li>Dataset inspection and cleaning</li>
+                <li>Descriptive statistics</li>
+                <li>Distribution and relationship visualisations</li>
+                <li>Data-driven observations and conclusions</li>
+              </ul>
+            </template>
+          </article>
+
+
+          <!-- ================= PROJECT 3 ================= -->
+
+          <article class="card card--hover project reveal" data-category="web">
+            <div class="project__thumb">
+              <img src="images/website.png" alt="Full Stack Websites" />
+            </div>
+
+            <div class="project__body">
+              <h3>Full Stack Websites</h3>
+              <p>Full stack web projects built with HTML, CSS, JavaScript and PHP, combining responsive interfaces with server-side functionality.</p>
+
+              <ul class="tags">
+                <li class="tag">HTML</li>
+                <li class="tag">CSS</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag">PHP</li>
+              </ul>
+
+              <div class="project__actions">
+                <button class="btn btn--sm" type="button" data-open-details>Details</button>
+                <a class="btn btn--sm" href="https://github.com/HamadRiyaz/Full-Stack-Web-Development.git" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+            </div>
+
+            <template>
+              <h2 style="margin-bottom:6px">Full Stack Websites</h2>
+              <ul class="tags">
+                <li class="tag">HTML</li>
+                <li class="tag">CSS</li>
+                <li class="tag">JavaScript</li>
+                <li class="tag">PHP</li>
+              </ul>
+
+              <h3>Overview</h3>
+              <p>A collection of full stack websites combining frontend development with PHP-based backend functionality.</p>
+
+              <h3>Frontend</h3>
+              <p>Responsive layouts and interactive interfaces are built using semantic HTML, modern CSS and vanilla JavaScript.</p>
+
+              <h3>Backend</h3>
+              <p>PHP is used for server-side processing and connecting frontend forms and application features with backend logic.</p>
+
+              <h3>Key features</h3>
+              <ul>
+                <li>Responsive website layouts</li>
+                <li>Interactive JavaScript components</li>
+                <li>PHP server-side processing</li>
+                <li>Frontend and backend integration</li>
+              </ul>
+            </template>
+          </article>
+
+
+          <!-- ================= PROJECT 4 ================= -->
+
+          <article class="card card--hover project reveal" data-category="web">
+            <div class="project__thumb">
+              <img src="images/front_end.png" alt="Front End Websites and Portfolio" />
+            </div>
+
+            <div class="project__body">
+              <h3>Front End Websites &amp; Portfolio</h3>
+              <p>Responsive frontend websites and portfolio interfaces created with clean HTML, CSS and vanilla JavaScript.</p>
+
+              <ul class="tags">
+                <li class="tag">HTML</li>
+                <li class="tag">CSS</li>
+                <li class="tag">JavaScript</li>
+              </ul>
+
+              <div class="project__actions">
+                <button class="btn btn--sm" type="button" data-open-details>Details</button>
+                <a class="btn btn--sm" href="https://github.com/HamadRiyaz/Front-End-Websites-Portfolio.git" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+            </div>
+
+            <template>
+              <h2 style="margin-bottom:6px">Front End Websites &amp; Portfolio</h2>
+              <ul class="tags">
+                <li class="tag">HTML</li>
+                <li class="tag">CSS</li>
+                <li class="tag">JavaScript</li>
+              </ul>
+
+              <h3>Overview</h3>
+              <p>A collection of frontend projects focused on responsive design, clean layouts and interactive user experiences.</p>
+
+              <h3>Approach</h3>
+              <p>Projects are developed with semantic HTML, reusable CSS styling and vanilla JavaScript without depending on a frontend framework.</p>
+
+              <h3>Key features</h3>
+              <ul>
+                <li>Responsive layouts</li>
+                <li>Modern CSS styling</li>
+                <li>JavaScript interactions</li>
+                <li>Multi-page portfolio design</li>
+              </ul>
+            </template>
+          </article>
+
+
+          <!-- ================= PROJECT 5 ================= -->
+
+          <article class="card card--hover project reveal" data-category="java">
+            <div class="project__thumb">
+              <img src="images/java.png" alt="Java Command Line Projects" />
+            </div>
+
+            <div class="project__body">
+              <h3>Java Cmd Based Projects</h3>
+              <p>A collection of Java command-line projects built to practise programming logic, OOP concepts and problem solving.</p>
+
+              <ul class="tags">
+                <li class="tag">Java</li>
+                <li class="tag">OOP</li>
+                <li class="tag">CLI</li>
+                <li class="tag">Problem Solving</li>
+              </ul>
+
+              <div class="project__actions">
+                <button class="btn btn--sm" type="button" data-open-details>Details</button>
+                <a class="btn btn--sm" href="https://github.com/HamadRiyaz/Java-Console-Applications.git" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+            </div>
+
+            <template>
+              <h2 style="margin-bottom:6px">Java CMD Based Projects</h2>
+              <ul class="tags">
+                <li class="tag">Java</li>
+                <li class="tag">OOP</li>
+                <li class="tag">CLI</li>
+                <li class="tag">Problem Solving</li>
+              </ul>
+
+              <h3>Overview</h3>
+              <p>A collection of command-line Java programs created to strengthen programming fundamentals and object-oriented thinking.</p>
+
+              <h3>Focus</h3>
+              <p>The projects focus on building practical console applications, applying Java syntax and developing structured solutions to programming problems.</p>
+
+              <h3>Key features</h3>
+              <ul>
+                <li>Command-line interaction</li>
+                <li>Java classes and objects</li>
+                <li>Input handling and program logic</li>
+                <li>Object-oriented programming practice</li>
+              </ul>
+            </template>
+          </article>
+
+
+          <!-- ================= PROJECT 6 ================= -->
+
+          <article class="card card--hover project reveal" data-category="dsa">
+            <div class="project__thumb">
+              <img src="images/dsa.png" alt="DSA Practice Collection" />
+            </div>
+
+            <div class="project__body">
+              <h3>DSA Practice Collection</h3>
+              <p>A structured collection of data structures and algorithms with implementations and complexity-focused practice.</p>
+
+              <ul class="tags">
+                
+                <li class="tag">Java</li>
+                <li class="tag">Algorithms</li>
+              </ul>
+
+              <div class="project__actions">
+                <button class="btn btn--sm" type="button" data-open-details>Details</button>
+                <a class="btn btn--sm" href="https://github.com/HamadRiyaz/Data-Structure-and-Algorithm.git" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+            </div>
+
+            <template>
+              <h2 style="margin-bottom:6px">DSA Practice Collection</h2>
+              <ul class="tags">
+                <li class="tag">Java</li>
+                <li class="tag">Algorithms</li>
+              </ul>
+
+              <h3>Overview</h3>
+              <p>A structured practice repository covering core data structures and algorithmic problem-solving patterns.</p>
+
+              <h3>Focus</h3>
+              <p>The collection is organised around common data structures and algorithms so concepts can be practised, reviewed and compared by complexity.</p>
+
+              <h3>Key features</h3>
+              <ul>
+                <li>Arrays and linked lists</li>
+                <li>Stacks and queues</li>
+                <li>Trees and traversals</li>
+                <li>Sorting, searching and complexity analysis</li>
+              </ul>
+            </template>
+          </article>
+
+
+          <!-- ================= PROJECT 7 ================= -->
+
+          <article class="card card--hover project reveal" data-category="java">
+            <div class="project__thumb">
+              <img src="images/oop.png" alt="Java Object Oriented Programming Projects" />
+            </div>
+
+            <div class="project__body">
+              <h3>Object Oriented Programming Projects</h3>
+              <p>Java projects focused on applying object-oriented programming concepts through practical, command-line based applications.</p>
+
+              <ul class="tags">
+                <li class="tag">Java</li>
+                <li class="tag">OOP</li>
+                <li class="tag">Classes</li>
+                <li class="tag">Inheritance</li>
+              </ul>
+
+              <div class="project__actions">
+                <button class="btn btn--sm" type="button" data-open-details>Details</button>
+                <a class="btn btn--sm" href="https://github.com/HamadRiyaz/Object-Oriented-Programming-Projects.git" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+            </div>
+
+            <template>
+              <h2 style="margin-bottom:6px">Object Oriented Programming Projects</h2>
+              <ul class="tags">
+                <li class="tag">Java</li>
+                <li class="tag">OOP</li>
+                <li class="tag">Classes</li>
+                <li class="tag">Inheritance</li>
+              </ul>
+
+              <h3>Overview</h3>
+              <p>A collection of Java projects designed to practise the core principles of object-oriented programming through practical applications.</p>
+
+              <h3>Focus</h3>
+              <p>The projects emphasise classes and objects, encapsulation, inheritance and organised program structure.</p>
+
+              <h3>Key features</h3>
+              <ul>
+                <li>Classes and objects</li>
+                <li>Encapsulation</li>
+                <li>Inheritance</li>
+                <li>Reusable object-oriented design</li>
+              </ul>
+            </template>
+          </article>
+
+
+          <!-- ================= PROJECT 8 ================= -->
+
+          <article class="card card--hover project reveal" data-category="data python">
+            <div class="project__thumb">
+              <img src="images/machine_learning.png" alt="Machine Learning Projects" />
+            </div>
+
+            <div class="project__body">
+              <h3>Machine Learning Basics</h3>
+              <p>Machine learning experiments using Python, public datasets and standard evaluation metrics for regression and classification.</p>
+
+              <ul class="tags">
+                <li class="tag">Python</li>
+                <li class="tag">Scikit-learn</li>
+                <li class="tag">NumPy</li>
+                <li class="tag">Pandas</li>
+              </ul>
+
+              <div class="project__actions">
+                <button class="btn btn--sm" type="button" data-open-details>Details</button>
+                <a class="btn btn--sm" href="https://github.com/HamadRiyaz/Machine-learning-Projects.git" target="_blank" rel="noopener">GitHub ↗</a>
+              </div>
+            </div>
+
+            <template>
+              <h2 style="margin-bottom:6px">Machine Learning Basics</h2>
+              <ul class="tags">
+                <li class="tag">Python</li>
+                <li class="tag">Scikit-learn</li>
+                <li class="tag">NumPy</li>
+                <li class="tag">Pandas</li>
+              </ul>
+
+              <h3>Overview</h3>
+              <p>A collection of machine learning experiments covering supervised learning workflows with Python and Scikit-learn.</p>
+
+              <h3>Workflow</h3>
+              <p>The projects follow a practical workflow of preparing data, splitting datasets, training models and evaluating predictions with appropriate metrics.</p>
+
+              <h3>Key features</h3>
+              <ul>
+                <li>Data preparation with Pandas and NumPy</li>
+                <li>Train/test splitting</li>
+                <li>Regression and classification models</li>
+                <li>Accuracy, precision and recall evaluation</li>
+              </ul>
+            </template>
+          </article>
+
+        </div>
+
+
+        <!-- EMPTY STATE -->
+
+        <p
+          class="empty-state"
+          id="projects-empty"
+          hidden
+        >
+          No projects in this category yet.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= MODAL ================= -->
+
+    <div
+      class="modal"
+      id="project-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-hidden="true"
+      aria-label="Project details"
+    >
+
+      <div class="modal__panel">
+
+        <button
+          class="modal__close"
+          type="button"
+          aria-label="Close project details"
+        >
+          &times;
+        </button>
+
+        <div id="modal-content"></div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer class="site-footer">
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+
+        <!-- ABOUT -->
+
+        <div>
+
+          <p
+            class="logo"
+            style="font-size:1.3rem;margin-bottom:6px"
+          >
+            HR
+          </p>
+
+          <p style="margin-bottom:4px">
+
+            <strong style="color:var(--text)">
+              Hamad Riyaz
+            </strong>
+
+          </p>
+
+          <p style="font-size:.88rem">
+            Python Developer | Web Scraping | Data | Frontend
+          </p>
+
+        </div>
+
+
+        <!-- NAVIGATE -->
+
+        <div>
+
+          <h4>
+            Navigate
+          </h4>
+
+          <ul class="footer-links">
+
+            <li>
+              <a href="index.html">
+                Home
+              </a>
+            </li>
+
+            <li>
+              <a href="about.html">
+                About
+              </a>
+            </li>
+
+            <li>
+              <a href="skills.html">
+                Skills
+              </a>
+            </li>
+
+            <li>
+              <a href="projects.html">
+                Projects
+              </a>
+            </li>
+
+            <li>
+              <a href="contact.html">
+                Contact
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <!-- CONNECT -->
+
+        <div>
+
+          <h4>
+            Connect
+          </h4>
+
+          <ul class="footer-links">
+
+            <li>
+              <a
+                href="https://github.com/hamadriyaz"
+                target="_blank"
+                rel="noopener"
+              >
+                GitHub
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://www.linkedin.com/in/hamadriyaz"
+                target="_blank"
+                rel="noopener"
+              >
+                LinkedIn
+              </a>
+            </li>
+
+            <li>
+              <a
+                href="https://www.fiverr.com/hamad_riyaz"
+                target="_blank"
+                rel="noopener"
+              >
+                Fiverr
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:hamadriyaz22@gmail.com">
+                Email
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+
+      <p class="copyright">
+
+        &copy;
+
+        <span data-year></span>
+
+        Hamad Riyaz. All rights reserved.
+
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- BACK TO TOP -->
+
+  <button
+    class="to-top"
+    type="button"
+    aria-label="Back to top"
+  >
+    &#8593;
+  </button>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script
+    src="js/script.js"
+    defer
+  ></script>
+
+</body>
+</html>
