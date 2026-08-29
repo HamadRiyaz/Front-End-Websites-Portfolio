@@ -28,7 +28,7 @@ jobs:
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4name: Deploy Portfolio to GitHub Pages
+        uses:name: Deploy Portfolio to GitHub Pages
 
 on:
   push:
